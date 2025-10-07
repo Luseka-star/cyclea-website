@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help Center - Cyclea Period & Cycle Tracker">
+    <title>Help Center - Cyclea</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .help-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+        }
+
+        .help-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .help-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #E91E63, #9C27B0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .help-header p {
+            font-size: 1.2rem;
+            color: #757575;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 60px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 18px 50px 18px 25px;
+            border: 2px solid #E0E0E0;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #E91E63;
+            box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3rem;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .quick-link-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .quick-link-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .quick-link-card h3 {
+            color: #212121;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .quick-link-card p {
+            color: #757575;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .help-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .help-section h2 {
+            color: #212121;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #E91E63;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .help-item {
+            padding: 25px;
+            background: #F9F9F9;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .help-item:hover {
+            background: #F3E5F5;
+        }
+
+        .help-item h3 {
+            color: #E91E63;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .help-item p {
+            color: #616161;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .help-item ul {
+            margin: 15px 0 0 20px;
+            color: #616161;
+        }
+
+        .help-item li {
+            margin-bottom: 8px;
+        }
+
+        .contact-banner {
+            background: linear-gradient(135deg, #E91E63, #9C27B0);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .contact-banner h2 {
+            color: white;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+
+        .contact-banner p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-banner a {
+            display: inline-block;
+            background: white;
+            color: #E91E63;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .contact-banner a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .help-header h1 {
+                font-size: 2rem;
+            }
+
+            .help-container {
+                padding: 100px 15px 60px;
+            }
+
+            .help-section {
+                padding: 30px 20px;
+            }
+
+            .contact-banner {
+                padding: 30px 20px;
+            }
+
+            .contact-banner a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="images/logo.png" alt="Cyclea Logo" class="logo-img">
+                        <span class="logo-text">Cyclea</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#privacy">Privacy</a></li>
+                    <li><a href="help.html" class="btn-nav">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Help Content -->
+    <div class="help-container">
+        <div class="help-header">
+            <h1>Help Center</h1>
+            <p>Find answers, get support, and learn how to use Cyclea</p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" placeholder="Search for help..." id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <a href="faq.html" class="quick-link-card">
+                <div class="quick-link-icon">❓</div>
+                <h3>FAQ</h3>
+                <p>Common questions and answers</p>
+            </a>
+
+            <a href="#getting-started" class="quick-link-card">
+                <div class="quick-link-icon">🚀</div>
+                <h3>Getting Started</h3>
+                <p>Learn the basics of Cyclea</p>
+            </a>
+
+            <a href="#features" class="quick-link-card">
+                <div class="quick-link-icon">✨</div>
+                <h3>Features Guide</h3>
+                <p>Explore all features in detail</p>
+            </a>
+
+            <a href="#troubleshooting" class="quick-link-card">
+                <div class="quick-link-icon">🔧</div>
+                <h3>Troubleshooting</h3>
+                <p>Fix common issues</p>
+            </a>
+        </div>
+
+        <!-- Getting Started Section -->
+        <div class="help-section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+
+            <div class="help-grid">
+                <div class="help-item">
+                    <h3>First Time Setup</h3>
+                    <p>Getting started with Cyclea is easy:</p>
+                    <ul>
+                        <li>Download from the App Store</li>
+                        <li>Open the app (no account needed!)</li>
+                        <li>Tap on the calendar to log your first period</li>
+                        <li>The app will start making predictions automatically</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Logging Your Period</h3>
+                    <p>To track your menstrual cycle:</p>
+                    <ul>
+                        <li>Tap any date on the calendar</li>
+                        <li>Double-tap to start a new period</li>
+                        <li>Select flow intensity (light, medium, heavy)</li>
+                        <li>Add symptoms, mood, or notes if desired</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Understanding the Calendar</h3>
+                    <p>Color-coded calendar shows:</p>
+                    <ul>
+                        <li><strong>Pink/Red:</strong> Period days</li>
+                        <li><strong>Purple:</strong> Ovulation day</li>
+                        <li><strong>Light Purple:</strong> Fertile window</li>
+                        <li><strong>Circle:</strong> Today's date</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Guide Section -->
+        <div class="help-section" id="features">
+            <h2>✨ Features Guide</h2>
+
+            <div class="help-grid">
+                <div class="help-item">
+                    <h3>Tracking Symptoms</h3>
+                    <p>Log 20+ symptoms including:</p>
+                    <ul>
+                        <li>Physical: Cramps, headaches, bloating, acne</li>
+                        <li>Emotional: Mood swings, anxiety, irritability</li>
+                        <li>Other: Fatigue, cravings, insomnia</li>
+                    </ul>
+                    <p>Tap any date to add or view symptoms for that day.</p>
+                </div>
+
+                <div class="help-item">
+                    <h3>Mood Tracking</h3>
+                    <p>Monitor your emotional well-being with 7 mood states:</p>
+                    <ul>
+                        <li>Happy, Sad, Energetic, Tired</li>
+                        <li>Anxious, Calm, Irritable</li>
+                    </ul>
+                    <p>Track patterns and see how your mood changes throughout your cycle.</p>
+                </div>
+
+                <div class="help-item">
+                    <h3>Temperature Tracking</h3>
+                    <p>For fertility awareness:</p>
+                    <ul>
+                        <li>Log basal body temperature daily</li>
+                        <li>View temperature trends in charts</li>
+                        <li>Helps identify ovulation patterns</li>
+                        <li>Best taken first thing in the morning</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Setting Reminders</h3>
+                    <p>Never miss important dates:</p>
+                    <ul>
+                        <li>Go to Reminders tab</li>
+                        <li>Enable period start notifications</li>
+                        <li>Set medication reminders</li>
+                        <li>Add doctor appointment alerts</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Viewing Predictions</h3>
+                    <p>See your cycle forecasts:</p>
+                    <ul>
+                        <li>Next period date prediction</li>
+                        <li>Fertile window estimation</li>
+                        <li>Ovulation day forecast</li>
+                        <li>Predictions improve with more data</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Health Insights</h3>
+                    <p>Get personalized information:</p>
+                    <ul>
+                        <li>Average cycle length</li>
+                        <li>Cycle regularity analysis</li>
+                        <li>Most common symptoms</li>
+                        <li>Temperature trends (if tracked)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="help-section" id="troubleshooting">
+            <h2>🔧 Troubleshooting</h2>
+
+            <div class="help-grid">
+                <div class="help-item">
+                    <h3>App Won't Open</h3>
+                    <p>If Cyclea won't launch:</p>
+                    <ul>
+                        <li>Force close and reopen the app</li>
+                        <li>Restart your iPhone</li>
+                        <li>Update to the latest iOS version</li>
+                        <li>Reinstall the app (data will be lost)</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Predictions Seem Wrong</h3>
+                    <p>Improving prediction accuracy:</p>
+                    <ul>
+                        <li>Log at least 2-3 complete cycles</li>
+                        <li>Ensure period dates are accurate</li>
+                        <li>Predictions adapt to your unique cycle</li>
+                        <li>Irregular cycles may have less accurate predictions</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Reminders Not Working</h3>
+                    <p>To fix notification issues:</p>
+                    <ul>
+                        <li>Check iOS Settings > Notifications > Cyclea</li>
+                        <li>Ensure "Allow Notifications" is ON</li>
+                        <li>Check reminder settings in the app</li>
+                        <li>Make sure Do Not Disturb is off</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Can't Delete or Edit Entry</h3>
+                    <p>To modify past entries:</p>
+                    <ul>
+                        <li>Tap on the date in the calendar</li>
+                        <li>View the entry details</li>
+                        <li>Tap Edit or Delete button</li>
+                        <li>Confirm your changes</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Lost My Data</h3>
+                    <p>Data recovery options:</p>
+                    <ul>
+                        <li>Check if you have an iPhone backup</li>
+                        <li>Restore from iTunes or iCloud backup</li>
+                        <li>Data is not recoverable without backup</li>
+                        <li>Always keep regular device backups</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>App Running Slow</h3>
+                    <p>To improve performance:</p>
+                    <ul>
+                        <li>Close other apps running in background</li>
+                        <li>Restart your iPhone</li>
+                        <li>Update Cyclea to latest version</li>
+                        <li>Free up storage space on device</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy & Security Section -->
+        <div class="help-section">
+            <h2>🔒 Privacy & Security</h2>
+
+            <div class="help-grid">
+                <div class="help-item">
+                    <h3>Is My Data Safe?</h3>
+                    <p>Your privacy is our priority:</p>
+                    <ul>
+                        <li>All data stored locally on your device</li>
+                        <li>No cloud syncing or server uploads</li>
+                        <li>Protected by device passcode/Face ID</li>
+                        <li>We never access your health data</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Backing Up Data</h3>
+                    <p>Keep your tracking safe:</p>
+                    <ul>
+                        <li>Enable iCloud Backup on iPhone</li>
+                        <li>Or use iTunes for manual backups</li>
+                        <li>Data included in device backups</li>
+                        <li>Restore from backup to recover data</li>
+                    </ul>
+                </div>
+
+                <div class="help-item">
+                    <h3>Deleting All Data</h3>
+                    <p>To permanently remove data:</p>
+                    <ul>
+                        <li>Go to Settings in the app</li>
+                        <li>Tap "Delete All Data"</li>
+                        <li>Confirm deletion</li>
+                        <li>Or uninstall the app completely</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Banner -->
+        <div class="contact-banner">
+            <h2>Still Need Help?</h2>
+            <p>Our support team is here to assist you. We typically respond within 24 hours.</p>
+            <a href="mailto:support@cyclea-app.com">Email Support</a>
+            <a href="faq.html">View FAQ</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cyclea</h4>
+                    <p>Your personal menstrual health companion</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="mailto:support@cyclea-app.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyclea. All rights reserved.</p>
+                <p class="disclaimer">Cyclea is a health tracking tool, not a medical device. Always consult healthcare professionals for medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            const searchText = e.target.value.toLowerCase();
+            const helpItems = document.querySelectorAll('.help-item');
+
+            helpItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchText)) {
+                    item.style.display = 'block';
+                    item.style.background = searchText ? '#FFF0F5' : '#F9F9F9';
+                } else {
+                    item.style.display = searchText ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
